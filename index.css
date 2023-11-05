@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #666;
+}
+h1 {
+  margin: 2rem auto;
+  font-family: Anton;
+  letter-spacing: 0.2rem;
+  font-sze: 4rem;
+  color: white;
+}
+.container {
+  padding: 4rem;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  width: 30rem;
+  align-content: center;
+  justify-content: center;
+  margin: 5rem auto;
+  background: pink;
+  gap: 2rem;
+  pointer-events: none;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.container * {
+  pointer-events: auto;
+}
