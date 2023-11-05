@@ -84,7 +84,7 @@ function flipCard(e) {
   selectedTiles.push(selectedCardName);
   selectedTileIds.push(picId);
   console.log(selectedTiles);
-  if (container.firstChild === "#text") {
+  if (container.children.length === 0) {
     score.innerText = "you win";
   }
   if (selectedTiles.length < 2 && selectedTileIds.length < 2) {
@@ -138,4 +138,11 @@ function confirmTiles() {
 function scoreIt() {
   i += 2;
   score.innerText = `${cardArray.length - i} more to go`;
+  if (score.innerText === `0 more to go`) {
+    container.style.display = "none";
+    score.innerText = "Congrats You've Won Refresh to replay";
+    document.body.style.display = "flex";
+    document.body.style.alignItems = "center";
+    document.body.style.justifyContent = "center";
+  }
 }
